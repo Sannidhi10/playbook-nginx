@@ -1,0 +1,10 @@
+---
+- name: Update web servers
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Ensure nginx is at the latest version
+      ansible.builtin.apt:
+        name: nginx
+        state: latest
